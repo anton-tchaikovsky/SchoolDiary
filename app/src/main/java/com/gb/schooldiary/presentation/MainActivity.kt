@@ -1,11 +1,13 @@
-package com.gb.schooldiary
+package com.gb.schooldiary.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import com.gb.schooldiary.R
 import com.gb.schooldiary.databinding.ActivityMainBinding
+import com.gb.schooldiary.presentation.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString(KEY_CURRENT_FRAGMENT,
+        outState.putString(
+            KEY_CURRENT_FRAGMENT,
             supportFragmentManager.findFragmentById(R.id.fragment_container)?.tag
                 ?: TAG_HOME_FRAGMENT
         )

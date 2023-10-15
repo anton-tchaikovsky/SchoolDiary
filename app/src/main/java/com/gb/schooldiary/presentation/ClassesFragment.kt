@@ -1,4 +1,4 @@
-package com.gb.schooldiary
+package com.gb.schooldiary.presentation
 
 import com.gb.schooldiary.databinding.FragmentClassesBinding
 import com.gb.schooldiary.utils.ViewBindingFragment

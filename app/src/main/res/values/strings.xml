@@ -5,4 +5,13 @@
     <string name="classes">Classes</string>
     <string name="notes">Notes</string>
     <string name="marks">Marks</string>
+    <!--home_fragment-->
+    <string name="hello">Hi, Anton!</string>
+    <string name="homework">Homework</string>
+    <string name="exam">Are you ready for exams?</string>
+    <string name="default_time">0</string>
+    <string name="colon">:</string>
+    <string name="days">Days</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
 </resources>

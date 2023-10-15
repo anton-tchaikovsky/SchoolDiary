@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--app-->
     <dimen name="margin_small">4dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
-
+    <dimen name="margin_large">24dp</dimen>
+    <!--navigation_view-->
     <dimen name="height_menu_card_view">64dp</dimen>
     <dimen name="height_item_menu_card_view">40dp</dimen>
+    <!--home_fragment-->
+    <dimen name="height_avatar_image_view">32dp</dimen>
+    <dimen name="width_avatar_image_view">32dp</dimen>
+    <dimen name="height_homework_recycler_view">144dp</dimen>
+    <dimen name="height_classes_recycler_view">80dp</dimen>
 
 </resources>
