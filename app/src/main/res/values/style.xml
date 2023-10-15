@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MainCardViewStyle" parent="@style/Widget.Material3.CardView.Elevated">
+    <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="MenuCardViewStyle" parent="@style/MainCardViewStyle">
+        <item name="cardBackgroundColor">@color/green_alpha</item>
+    </style>
+
+    <style name="MenuTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
