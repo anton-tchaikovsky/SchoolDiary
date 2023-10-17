@@ -12,4 +12,6 @@ interface Interactor {
 
     fun getCurrentClassPosition(): Int
 
+    suspend fun getHomeworks(): List<Homework>
+
 }

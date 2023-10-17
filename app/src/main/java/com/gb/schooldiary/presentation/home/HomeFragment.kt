@@ -11,8 +11,10 @@ import com.gb.schooldiary.R
 import com.gb.schooldiary.data.FakeRepositoryImpl
 import com.gb.schooldiary.databinding.FragmentHomeBinding
 import com.gb.schooldiary.domain.Class
+import com.gb.schooldiary.domain.Homework
 import com.gb.schooldiary.domain.InteractorImpl
-import com.gb.schooldiary.presentation.home.classes_recycler_view.ClassAdapter
+import com.gb.schooldiary.presentation.home.classes_recycler_view.ClassesAdapter
+import com.gb.schooldiary.presentation.home.homeworks_recycler_view.HomeworksAdapter
 import com.gb.schooldiary.utils.ViewBindingFragment
 
 class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -24,7 +26,9 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBindin
         )[HomeViewModelImpl::class.java]
     }
 
-    private val classesAdapter: ClassAdapter = ClassAdapter()
+    private val classesAdapter: ClassesAdapter = ClassesAdapter()
+
+    private val homeworksAdapter: HomeworksAdapter = HomeworksAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,11 +40,27 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBindin
             getTodayClassesLiveData().observe(viewLifecycleOwner) {
                 setTodayClasses(it.first, it.second)
             }
+            getHomeworksLiveData().observe(viewLifecycleOwner){
+                setHomeworks(it)
+            }
         }
     }
 
     private fun initView() {
         initClassesRecyclerView()
+        initHomeworksRecyclerView()
+    }
+
+    private fun initHomeworksRecyclerView() {
+        binding.homeworkRecycleView.run {
+            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+            val dividerItemDecoration = DividerItemDecoration(requireContext(), RecyclerView.HORIZONTAL)
+            ContextCompat.getDrawable(requireContext(), R.drawable.divider)?.let {
+                dividerItemDecoration.setDrawable(it)
+            }
+            addItemDecoration(dividerItemDecoration)
+            adapter = homeworksAdapter
+        }
     }
 
     private fun initClassesRecyclerView() {
@@ -72,6 +92,10 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBindin
         classesAdapter.setClasses(todayClasses)
         binding.classesRecycleView.scrollToPosition(currentClassPosition)
         binding.numberClassesTextView.text = getString(R.string.number_classes_today).format(todayClasses.size)
+    }
+
+    private fun setHomeworks(homeworks: List<Homework>){
+        homeworksAdapter.setHomeworks(homeworks)
     }
 
     companion object {

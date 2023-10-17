@@ -1,6 +1,7 @@
 package com.gb.schooldiary.data
 
 import com.gb.schooldiary.domain.Class
+import com.gb.schooldiary.domain.Homework
 import com.gb.schooldiary.domain.Repository
 import java.util.Calendar
 import java.util.Locale
@@ -26,4 +27,14 @@ class FakeRepositoryImpl : Repository {
             Class("Mathematics", null, "Mrs. Knorr", "13:10", "13:55", isBaseClass = true, true),
             Class("Biology", null, "Mrs. Williams", "14:15", "15:00", isBaseClass = true, true)
         )
+
+    override suspend fun getHomeworks(): List<Homework> =
+        listOf(
+            Homework("Literature", "Read scenes 1.1 - 1.12 of the Master and Margarita", "19.10.2023", listOf("Mike", "Mishel")),
+            Homework("Physics", "Learn Newton's laws of motion","20.10.2023", listOf("Mike", "Bob")),
+            Homework("Biology", "Learn Karl's classification principles", "25.10.2023", listOf("Mishel", "Bob"))
+        )
+
+
+
 }

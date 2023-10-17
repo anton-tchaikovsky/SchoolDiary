@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.databinding.ClassCardViewBinding
 import com.gb.schooldiary.domain.Class
 
-class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
+class ClassesAdapter : RecyclerView.Adapter<ClassViewHolder>() {
 
     private var classes: List<Class> = listOf()
 

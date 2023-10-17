@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gb.schooldiary.domain.Class
+import com.gb.schooldiary.domain.Homework
 import com.gb.schooldiary.domain.Interactor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,9 +21,19 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
     private val todayClassesLiveData: MutableLiveData<Pair<List<Class>, Int>> =
         MutableLiveData()
 
+    private val homeworksLiveData: MutableLiveData<List<Homework>> =
+        MutableLiveData()
+
     init {
         observeTimeBeforeExam()
         getTodayClasses()
+        getHomeworks()
+    }
+
+    private fun getHomeworks() {
+        scope.launch {
+            homeworksLiveData.value = interactor.getHomeworks()
+        }
     }
 
     private fun observeTimeBeforeExam(){
@@ -47,6 +58,9 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
 
     override fun getTodayClassesLiveData() =
         todayClassesLiveData
+
+    override fun getHomeworksLiveData(): LiveData<List<Homework>> =
+        homeworksLiveData
 
     private fun mapTimeBeforeExam(timeBeforeExam: Long): Triple<Pair<String, String>, Pair<String, String>, Pair<String, String>> {
         return if (timeBeforeExam <= 0)

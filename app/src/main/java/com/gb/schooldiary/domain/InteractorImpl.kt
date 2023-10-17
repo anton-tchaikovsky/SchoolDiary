@@ -68,6 +68,30 @@ class InteractorImpl(private val repository: Repository) :
         return positionCurrentClass
     }
 
+    override suspend fun getHomeworks(): List<Homework> {
+        val homeworks = repository.getHomeworks()
+        val daysBeforeHomeworks = getDaysBeforeHomeworks(homeworks.map {
+            it.date
+        })
+        for(i in homeworks.indices){
+            if(daysBeforeHomeworks[i]>0)
+                homeworks[i].daysBeforeDeadline = daysBeforeHomeworks[i]
+            if(daysBeforeHomeworks[i]< DEADLINE)
+                homeworks[i].isUrgent = true
+        }
+        return homeworks
+    }
+    private fun getDaysBeforeHomeworks(dates: List<String>): List<Int> {
+        val currentDate = Calendar.getInstance(Locale.ENGLISH)
+        return dates.map {
+            ((Calendar.getInstance(Locale.ENGLISH).apply {
+                set(Calendar.YEAR, it.substring(6,10).toInt())
+                set(Calendar.MONTH, it.substring(3,5).toInt()-1)
+                set(Calendar.DAY_OF_MONTH, it.substring(0,2).toInt())
+            }.time.time - currentDate.time.time) / (24 * 60 * 60 * 1000)).toInt()
+        }
+    }
+
     private fun changedTimeBeforeExam() {
         scope.launch {
             while (isActive) {
@@ -86,5 +110,6 @@ class InteractorImpl(private val repository: Repository) :
 
     companion object{
         private const val DELAY = 10000L
+        private const val DEADLINE = 3
     }
 }

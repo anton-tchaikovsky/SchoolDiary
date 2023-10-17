@@ -3,14 +3,16 @@
     <!--app-->
     <dimen name="margin_small">4dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
-    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
     <!--navigation_view-->
     <dimen name="height_menu_card_view">64dp</dimen>
     <dimen name="height_item_menu_card_view">40dp</dimen>
     <!--home_fragment-->
-    <dimen name="height_avatar_image_view">32dp</dimen>
-    <dimen name="width_avatar_image_view">32dp</dimen>
-    <dimen name="height_homework_recycler_view">144dp</dimen>
+    <dimen name="height_avatar_image_view_small">32dp</dimen>
+    <dimen name="width_avatar_image_view_small">32dp</dimen>
+    <dimen name="height_avatar_image_view_large">40dp</dimen>
+    <dimen name="width_avatar_image_view_large">40dp</dimen>
+    <dimen name="height_homework_recycler_view">160dp</dimen>
     <dimen name="height_classes_recycler_view">96dp</dimen>
     <dimen name="height_class_image_view">40dp</dimen>
     <dimen name="width_class_image_view">40dp</dimen>
@@ -19,5 +21,6 @@
     <dimen name="height_video_image_view">28dp</dimen>
     <dimen name="width_video_image_view">28dp</dimen>
     <dimen name="height_video_text_view">44dp</dimen>
-
+    <!--homework_card_view-->
+    <dimen name="width_homework_card_view">192dp</dimen>
 </resources>

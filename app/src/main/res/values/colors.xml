@@ -10,4 +10,5 @@
     <color name="blue_light">#03A9F4</color>
     <color name="green_blue">#229E8C</color>
     <color name="green_blue_alpha">#33229E8C</color>
+    <color name="red">#982C24</color>
 </resources>

@@ -13,7 +13,7 @@
     <string name="marks">Marks</string>
     <!--home_fragment-->
     <string name="hello">Hi, Helen!</string>
-    <string name="homework">Homework</string>
+    <string name="homeworks">Homeworks</string>
     <string name="exam">Are you ready for exams?</string>
     <string name="default_time">0</string>
     <string name="colon">:</string>
@@ -24,4 +24,10 @@
     <string name="video_open">Open in</string>
     <string name="time_class">%s : %s"</string>
     <string name="number_classes_today">%s classes today</string>
+    <!--homework_card_view-->
+    <string name="day_before_deadline">%s days left</string>
+    <string name="one_day_before_deadline">1 day left</string>
+    <string name="mike">Mike</string>
+    <string name="bob">Bob</string>
+    <string name="mishel">Mishel</string>
 </resources>
