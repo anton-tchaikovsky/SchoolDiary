@@ -3,6 +3,7 @@ package com.gb.schooldiary.presentation.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gb.schooldiary.domain.Class
 import com.gb.schooldiary.domain.Interactor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,15 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
     private val timeBeforeExamLiveData: MutableLiveData<Triple<Pair<String, String>, Pair<String, String>, Pair<String, String>>> =
         MutableLiveData()
 
+    private val todayClassesLiveData: MutableLiveData<Pair<List<Class>, Int>> =
+        MutableLiveData()
+
     init {
+        observeTimeBeforeExam()
+        getTodayClasses()
+    }
+
+    private fun observeTimeBeforeExam(){
         scope.launch {
             interactor.getTimeBeforeExam().collect {
                 timeBeforeExamLiveData.value = mapTimeBeforeExam(it)
@@ -25,8 +34,19 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
         interactor.isActive = true
     }
 
+    private fun getTodayClasses(){
+        scope.launch {
+            val todayClasses = interactor.getTodayClasses()
+            val currentClassPosition = interactor.getCurrentClassPosition()
+            todayClassesLiveData.value = Pair(todayClasses, currentClassPosition)
+        }
+    }
+
     override fun getTimeBeforeExamLiveData(): LiveData<Triple<Pair<String, String>, Pair<String, String>, Pair<String, String>>> =
         timeBeforeExamLiveData
+
+    override fun getTodayClassesLiveData() =
+        todayClassesLiveData
 
     private fun mapTimeBeforeExam(timeBeforeExam: Long): Triple<Pair<String, String>, Pair<String, String>, Pair<String, String>> {
         return if (timeBeforeExam <= 0)

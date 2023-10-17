@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">SchoolDiary</string>
+    <string name="history">History</string>
+    <string name="literature">Literature</string>
+    <string name="physical_education">Physical Education</string>
+    <string name="physics">Physics</string>
+    <string name="biology">Biology</string>
+    <string name="mathematics">Mathematics</string>
     <!--navigation_view-->
     <string name="home">Home</string>
     <string name="classes">Classes</string>
     <string name="notes">Notes</string>
     <string name="marks">Marks</string>
     <!--home_fragment-->
-    <string name="hello">Hi, Anton!</string>
+    <string name="hello">Hi, Helen!</string>
     <string name="homework">Homework</string>
     <string name="exam">Are you ready for exams?</string>
     <string name="default_time">0</string>
@@ -14,4 +20,8 @@
     <string name="days">Days</string>
     <string name="hours">Hours</string>
     <string name="minutes">Minutes</string>
+    <!--class_card_view-->
+    <string name="video_open">Open in</string>
+    <string name="time_class">%s : %s"</string>
+    <string name="number_classes_today">%s classes today</string>
 </resources>

@@ -10,13 +10,16 @@ import kotlinx.coroutines.withContext
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import kotlin.properties.Delegates
 
-class InteractorImpl(repository: Repository) :
+class InteractorImpl(private val repository: Repository) :
     Interactor {
 
     private val scope: CoroutineScope = CoroutineScope(Dispatchers.Default)
 
     private var examDate: Date? = null
+
+    private var todayClasses: List<Class> by Delegates.notNull()
 
     private val timeState: MutableStateFlow<Long> =
         MutableStateFlow(calculationTimeBeforeExam(examDate))
@@ -38,6 +41,32 @@ class InteractorImpl(repository: Repository) :
         }
 
     override fun getTimeBeforeExam(): StateFlow<Long> = timeState
+    override suspend fun getTodayClasses(): List<Class> =
+       withContext(Dispatchers.IO) {
+          repository.getTodayClasses().also {
+              todayClasses = it
+          }
+        }
+
+    override fun getCurrentClassPosition(): Int {
+            val currentTimes = Calendar.getInstance(Locale.ENGLISH)
+            val endTimes = todayClasses.map {
+                it.endTime
+            }.map {
+                Calendar.getInstance(Locale.ENGLISH).apply {
+                    set(Calendar.HOUR_OF_DAY, it.substring(0,2).toInt())
+                    set(Calendar.MINUTE, it.substring(3,5).toInt())
+                }
+            }
+            var positionCurrentClass = endTimes.size-1
+            for(i in endTimes.indices){
+                if (currentTimes.before(endTimes[i])){
+                    positionCurrentClass = i
+                    break
+                }
+            }
+        return positionCurrentClass
+    }
 
     private fun changedTimeBeforeExam() {
         scope.launch {

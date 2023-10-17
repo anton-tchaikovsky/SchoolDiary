@@ -11,6 +11,13 @@
     <dimen name="height_avatar_image_view">32dp</dimen>
     <dimen name="width_avatar_image_view">32dp</dimen>
     <dimen name="height_homework_recycler_view">144dp</dimen>
-    <dimen name="height_classes_recycler_view">80dp</dimen>
+    <dimen name="height_classes_recycler_view">96dp</dimen>
+    <dimen name="height_class_image_view">40dp</dimen>
+    <dimen name="width_class_image_view">40dp</dimen>
+    <!--class_card_view-->
+    <dimen name="width_video_layout">48dp</dimen>
+    <dimen name="height_video_image_view">28dp</dimen>
+    <dimen name="width_video_image_view">28dp</dimen>
+    <dimen name="height_video_text_view">44dp</dimen>
 
 </resources>

@@ -88,7 +88,6 @@
         app:layout_constraintBottom_toTopOf="@id/homework_text_view"
         android:layout_marginBottom="@dimen/margin_large"
         android:layout_marginStart="@dimen/margin_large"
-        android:layout_marginEnd="@dimen/margin_large"
         />
 
     <TextView
