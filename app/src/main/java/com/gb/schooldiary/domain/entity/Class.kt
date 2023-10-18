@@ -1,4 +1,4 @@
-package com.gb.schooldiary.domain
+package com.gb.schooldiary.domain.entity
 
 data class Class(
     val name: String,

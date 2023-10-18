@@ -3,9 +3,9 @@ package com.gb.schooldiary.presentation.view_model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gb.schooldiary.domain.Class
-import com.gb.schooldiary.domain.Homework
-import com.gb.schooldiary.domain.Interactor
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
+import com.gb.schooldiary.domain.use_case.Interactor
 import com.gb.schooldiary.presentation.view_model.classes.ClassesViewModel
 import com.gb.schooldiary.presentation.view_model.home.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, ClassesViewModel, ViewModel() {
+class ViewModelImpl(private val interactor: Interactor) : HomeViewModel, ClassesViewModel, ViewModel() {
 
     private val scope: CoroutineScope = CoroutineScope(Dispatchers.Main)
 

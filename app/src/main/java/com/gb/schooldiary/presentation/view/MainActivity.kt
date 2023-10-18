@@ -1,4 +1,4 @@
-package com.gb.schooldiary.presentation
+package com.gb.schooldiary.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +7,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.gb.schooldiary.R
 import com.gb.schooldiary.databinding.ActivityMainBinding
-import com.gb.schooldiary.presentation.classes.ClassesFragment
-import com.gb.schooldiary.presentation.home.HomeFragment
+import com.gb.schooldiary.presentation.view.classes.ClassesFragment
+import com.gb.schooldiary.presentation.view.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

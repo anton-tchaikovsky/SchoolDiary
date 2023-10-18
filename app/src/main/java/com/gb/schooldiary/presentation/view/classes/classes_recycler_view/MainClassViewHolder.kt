@@ -1,10 +1,10 @@
-package com.gb.schooldiary.presentation.classes.classes_recycler_view
+package com.gb.schooldiary.presentation.view.classes.classes_recycler_view
 
 import android.view.View
 import com.gb.schooldiary.R
 import com.gb.schooldiary.databinding.MainClassLayoutViewBinding
-import com.gb.schooldiary.domain.Class
-import com.gb.schooldiary.presentation.home.ProviderImageId
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.presentation.view.home.ProviderImageId
 
 class MainClassViewHolder(private val binding: MainClassLayoutViewBinding) :
     BaseClassViewHolder(binding) {

@@ -1,11 +1,11 @@
-package com.gb.schooldiary.presentation.home.classes_recycler_view
+package com.gb.schooldiary.presentation.view.home.classes_recycler_view
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.databinding.ClassCardViewBinding
-import com.gb.schooldiary.domain.Class
+import com.gb.schooldiary.domain.entity.Class
 
 class HomeClassesAdapter : RecyclerView.Adapter<HomeClassViewHolder>() {
 

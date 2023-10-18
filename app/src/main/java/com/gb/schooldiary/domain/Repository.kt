@@ -1,5 +1,7 @@
 package com.gb.schooldiary.domain
 
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
 import java.util.Calendar
 
 interface Repository {

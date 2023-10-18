@@ -1,5 +1,8 @@
-package com.gb.schooldiary.domain
+package com.gb.schooldiary.domain.use_case
 
+import com.gb.schooldiary.domain.Repository
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -42,6 +45,7 @@ class InteractorImpl(private val repository: Repository) :
         }
 
     override fun getTimeBeforeExam(): StateFlow<Long> = timeState
+
     override suspend fun getTodayClasses(): List<Class> =
         withContext(Dispatchers.IO) {
             repository.getTodayClasses().also {

@@ -1,33 +1,26 @@
-package com.gb.schooldiary.presentation.home
+package com.gb.schooldiary.presentation.view.home
 
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.R
-import com.gb.schooldiary.data.FakeRepositoryImpl
 import com.gb.schooldiary.databinding.FragmentHomeBinding
-import com.gb.schooldiary.domain.Class
-import com.gb.schooldiary.domain.Homework
-import com.gb.schooldiary.domain.InteractorImpl
-import com.gb.schooldiary.presentation.home.classes_recycler_view.HomeClassesAdapter
-import com.gb.schooldiary.presentation.home.homeworks_recycler_view.HomeworksAdapter
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
+import com.gb.schooldiary.presentation.view.home.classes_recycler_view.HomeClassesAdapter
+import com.gb.schooldiary.presentation.view.home.homeworks_recycler_view.HomeworksAdapter
+import com.gb.schooldiary.presentation.view_model.ViewModelImpl
 import com.gb.schooldiary.presentation.view_model.home.HomeViewModel
-import com.gb.schooldiary.presentation.view_model.ViewModelFactory
-import com.gb.schooldiary.presentation.view_model.HomeViewModelImpl
 import com.gb.schooldiary.utils.ViewBindingFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate)
+ {
 
-    private val viewModel: HomeViewModel by lazy {
-        ViewModelProvider(
-            requireActivity(),
-            ViewModelFactory(InteractorImpl(FakeRepositoryImpl()))
-        )[HomeViewModelImpl::class.java]
-    }
+    private val viewModel: HomeViewModel by viewModel<ViewModelImpl>()
 
     private val classesAdapter: HomeClassesAdapter = HomeClassesAdapter()
 

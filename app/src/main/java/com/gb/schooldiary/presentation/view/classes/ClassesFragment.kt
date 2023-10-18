@@ -1,33 +1,24 @@
-package com.gb.schooldiary.presentation.classes
+package com.gb.schooldiary.presentation.view.classes
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.R
-import com.gb.schooldiary.data.FakeRepositoryImpl
 import com.gb.schooldiary.databinding.FragmentClassesBinding
-import com.gb.schooldiary.domain.Class
-import com.gb.schooldiary.domain.InteractorImpl
-import com.gb.schooldiary.presentation.classes.classes_recycler_view.ClassesAdapter
-import com.gb.schooldiary.presentation.view_model.ViewModelFactory
-import com.gb.schooldiary.presentation.view_model.HomeViewModelImpl
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.presentation.view.classes.classes_recycler_view.ClassesAdapter
+import com.gb.schooldiary.presentation.view_model.ViewModelImpl
 import com.gb.schooldiary.presentation.view_model.classes.ClassesViewModel
 import com.gb.schooldiary.utils.ViewBindingFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ClassesFragment :
     ViewBindingFragment<FragmentClassesBinding>(FragmentClassesBinding::inflate) {
 
-    private val viewModel: ClassesViewModel by lazy {
-        ViewModelProvider(
-            requireActivity(),
-            ViewModelFactory(InteractorImpl(FakeRepositoryImpl()))
-        )[HomeViewModelImpl::class.java]
-    }
+    private val viewModel: ClassesViewModel by viewModel<ViewModelImpl>()
 
     private val classesAdapter: ClassesAdapter = ClassesAdapter()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()

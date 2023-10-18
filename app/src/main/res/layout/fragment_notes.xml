@@ -6,7 +6,7 @@
     android:clickable="true"
     android:focusable="true"
     android:background="@color/black"
-    tools:context=".presentation.NotesFragment">
+    tools:context=".presentation.view.NotesFragment">
 
     <TextView
         android:layout_width="match_parent"

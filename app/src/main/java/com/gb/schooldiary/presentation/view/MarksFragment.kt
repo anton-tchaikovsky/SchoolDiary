@@ -1,4 +1,4 @@
-package com.gb.schooldiary.presentation
+package com.gb.schooldiary.presentation.view
 
 import com.gb.schooldiary.databinding.FragmentMarksBinding
 import com.gb.schooldiary.utils.ViewBindingFragment

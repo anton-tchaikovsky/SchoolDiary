@@ -1,11 +1,11 @@
-package com.gb.schooldiary.presentation.home.homeworks_recycler_view
+package com.gb.schooldiary.presentation.view.home.homeworks_recycler_view
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.databinding.HomeworkCardViewBinding
-import com.gb.schooldiary.domain.Homework
+import com.gb.schooldiary.domain.entity.Homework
 
 class HomeworksAdapter : RecyclerView.Adapter<HomeworkViewHolder>() {
 

@@ -1,7 +1,7 @@
 package com.gb.schooldiary.data
 
-import com.gb.schooldiary.domain.Class
-import com.gb.schooldiary.domain.Homework
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
 import com.gb.schooldiary.domain.Repository
 import java.util.Calendar
 import java.util.Locale

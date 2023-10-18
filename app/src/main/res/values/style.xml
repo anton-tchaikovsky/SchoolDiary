@@ -12,6 +12,7 @@
     <style name="ExamTimeCardViewStyle" parent="@style/MainCardViewStyle">
         <item name="cardBackgroundColor">@color/black_alpha</item>
         <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
     <style name="MenuTextStyle" parent="Widget.AppCompat.TextView">

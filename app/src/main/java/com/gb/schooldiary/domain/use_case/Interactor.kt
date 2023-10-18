@@ -1,5 +1,7 @@
-package com.gb.schooldiary.domain
+package com.gb.schooldiary.domain.use_case
 
+import com.gb.schooldiary.domain.entity.Class
+import com.gb.schooldiary.domain.entity.Homework
 import kotlinx.coroutines.flow.StateFlow
 
 interface Interactor {

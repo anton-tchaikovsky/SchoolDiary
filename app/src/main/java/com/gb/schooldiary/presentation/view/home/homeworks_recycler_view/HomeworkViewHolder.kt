@@ -1,11 +1,11 @@
-package com.gb.schooldiary.presentation.home.homeworks_recycler_view
+package com.gb.schooldiary.presentation.view.home.homeworks_recycler_view
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.gb.schooldiary.R
 import com.gb.schooldiary.databinding.HomeworkCardViewBinding
-import com.gb.schooldiary.domain.Homework
-import com.gb.schooldiary.presentation.home.ProviderImageId
-import com.gb.schooldiary.presentation.home.ProviderImageId.getAvatarImageId
+import com.gb.schooldiary.domain.entity.Homework
+import com.gb.schooldiary.presentation.view.home.ProviderImageId
+import com.gb.schooldiary.presentation.view.home.ProviderImageId.getAvatarImageId
 
 class HomeworkViewHolder(private val binding: HomeworkCardViewBinding) : ViewHolder(binding.root) {
     fun bind(homework: Homework) {

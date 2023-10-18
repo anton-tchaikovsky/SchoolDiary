@@ -1,4 +1,4 @@
-package com.gb.schooldiary.presentation.home
+package com.gb.schooldiary.presentation.view.home
 
 import android.content.Context
 import com.gb.schooldiary.R

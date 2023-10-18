@@ -7,7 +7,7 @@
     android:clickable="true"
     android:focusable="true"
     android:background="@color/black"
-    tools:context=".presentation.classes.ClassesFragment">
+    tools:context=".presentation.view.classes.ClassesFragment">
 
     <TextView
         android:id="@+id/classes_text_view"
