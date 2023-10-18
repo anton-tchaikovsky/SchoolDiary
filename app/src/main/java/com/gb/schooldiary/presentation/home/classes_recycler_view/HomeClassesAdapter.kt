@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gb.schooldiary.databinding.ClassCardViewBinding
 import com.gb.schooldiary.domain.Class
 
-class ClassesAdapter : RecyclerView.Adapter<ClassViewHolder>() {
+class HomeClassesAdapter : RecyclerView.Adapter<HomeClassViewHolder>() {
 
     private var classes: List<Class> = listOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder =
-        ClassViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeClassViewHolder =
+        HomeClassViewHolder(
             ClassCardViewBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -23,7 +23,7 @@ class ClassesAdapter : RecyclerView.Adapter<ClassViewHolder>() {
     override fun getItemCount(): Int =
         classes.size
 
-    override fun onBindViewHolder(holder: ClassViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeClassViewHolder, position: Int) {
         holder.bind(classes[position])
     }
 

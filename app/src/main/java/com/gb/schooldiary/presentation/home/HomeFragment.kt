@@ -13,8 +13,11 @@ import com.gb.schooldiary.databinding.FragmentHomeBinding
 import com.gb.schooldiary.domain.Class
 import com.gb.schooldiary.domain.Homework
 import com.gb.schooldiary.domain.InteractorImpl
-import com.gb.schooldiary.presentation.home.classes_recycler_view.ClassesAdapter
+import com.gb.schooldiary.presentation.home.classes_recycler_view.HomeClassesAdapter
 import com.gb.schooldiary.presentation.home.homeworks_recycler_view.HomeworksAdapter
+import com.gb.schooldiary.presentation.view_model.home.HomeViewModel
+import com.gb.schooldiary.presentation.view_model.ViewModelFactory
+import com.gb.schooldiary.presentation.view_model.HomeViewModelImpl
 import com.gb.schooldiary.utils.ViewBindingFragment
 
 class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -22,11 +25,11 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>(FragmentHomeBindin
     private val viewModel: HomeViewModel by lazy {
         ViewModelProvider(
             requireActivity(),
-            HomeViewModelFactory(InteractorImpl(FakeRepositoryImpl()))
+            ViewModelFactory(InteractorImpl(FakeRepositoryImpl()))
         )[HomeViewModelImpl::class.java]
     }
 
-    private val classesAdapter: ClassesAdapter = ClassesAdapter()
+    private val classesAdapter: HomeClassesAdapter = HomeClassesAdapter()
 
     private val homeworksAdapter: HomeworksAdapter = HomeworksAdapter()
 

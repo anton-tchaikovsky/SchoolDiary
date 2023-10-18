@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/avatar" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/setting_image_view"
+        android:id="@+id/list_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_large"
@@ -48,7 +48,7 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/avatar_image_view"
-        app:layout_constraintEnd_toStartOf="@id/setting_image_view"
+        app:layout_constraintEnd_toStartOf="@id/list_image_view"
         app:layout_constraintTop_toTopOf="@id/avatar_image_view"
         app:srcCompat="@drawable/baseline_search_24" />
 

@@ -7,6 +7,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.gb.schooldiary.R
 import com.gb.schooldiary.databinding.ActivityMainBinding
+import com.gb.schooldiary.presentation.classes.ClassesFragment
 import com.gb.schooldiary.presentation.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {

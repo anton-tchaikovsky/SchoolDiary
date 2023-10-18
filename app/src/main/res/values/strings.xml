@@ -22,8 +22,10 @@
     <string name="minutes">Minutes</string>
     <!--class_card_view-->
     <string name="video_open">Open in</string>
-    <string name="time_class">%s : %s"</string>
+    <string name="time_class">%s - %s"</string>
     <string name="number_classes_today">%s classes today</string>
+    <string name="teacher">Teacher: %s</string>
+    <string name="today">Today, %s</string>
     <!--homework_card_view-->
     <string name="day_before_deadline">%s days left</string>
     <string name="one_day_before_deadline">1 day left</string>

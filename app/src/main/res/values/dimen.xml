@@ -3,7 +3,7 @@
     <!--app-->
     <dimen name="margin_small">4dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
-    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
     <!--navigation_view-->
     <dimen name="height_menu_card_view">64dp</dimen>
     <dimen name="height_item_menu_card_view">40dp</dimen>
@@ -23,4 +23,16 @@
     <dimen name="height_video_text_view">44dp</dimen>
     <!--homework_card_view-->
     <dimen name="width_homework_card_view">192dp</dimen>
+    <dimen name="margin_circle">42dp</dimen>
+    <dimen name="margin_circle_two">70dp</dimen>
+    <!--classes_fragment-->
+    <dimen name="height_circle_small">8dp</dimen>
+    <dimen name="width_circle_small">8dp</dimen>
+    <dimen name="height_circle_large">32dp</dimen>
+    <dimen name="width_circle_large">32dp</dimen>
+    <dimen name="width_line">2dp</dimen>
+    <dimen name="height_base_class_card_view">96dp</dimen>
+    <dimen name="height_base_class_layout">144dp</dimen>
+    <dimen name="height_additional_class_card_view">152dp</dimen>
+    <dimen name="height_additional_class_layout">200dp</dimen>
 </resources>

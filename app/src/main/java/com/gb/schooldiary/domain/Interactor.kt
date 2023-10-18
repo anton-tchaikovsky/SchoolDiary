@@ -14,4 +14,6 @@ interface Interactor {
 
     suspend fun getHomeworks(): List<Homework>
 
+    fun getToday(): String
+
 }

@@ -1,4 +1,4 @@
-package com.gb.schooldiary.presentation.home
+package com.gb.schooldiary.presentation.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,12 +6,14 @@ import androidx.lifecycle.ViewModel
 import com.gb.schooldiary.domain.Class
 import com.gb.schooldiary.domain.Homework
 import com.gb.schooldiary.domain.Interactor
+import com.gb.schooldiary.presentation.view_model.classes.ClassesViewModel
+import com.gb.schooldiary.presentation.view_model.home.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, ViewModel() {
+class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, ClassesViewModel, ViewModel() {
 
     private val scope: CoroutineScope = CoroutineScope(Dispatchers.Main)
 
@@ -24,10 +26,18 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
     private val homeworksLiveData: MutableLiveData<List<Homework>> =
         MutableLiveData()
 
+    private val todayLiveData: MutableLiveData<String> =
+        MutableLiveData()
+
     init {
         observeTimeBeforeExam()
         getTodayClasses()
         getHomeworks()
+        getToday()
+    }
+
+    private fun getToday() {
+        todayLiveData.value = interactor.getToday()
     }
 
     private fun getHomeworks() {
@@ -55,6 +65,9 @@ class HomeViewModelImpl(private val interactor: Interactor) : HomeViewModel, Vie
 
     override fun getTimeBeforeExamLiveData(): LiveData<Triple<Pair<String, String>, Pair<String, String>, Pair<String, String>>> =
         timeBeforeExamLiveData
+
+    override fun getTodayLiveData(): LiveData<String> =
+        todayLiveData
 
     override fun getTodayClassesLiveData() =
         todayClassesLiveData

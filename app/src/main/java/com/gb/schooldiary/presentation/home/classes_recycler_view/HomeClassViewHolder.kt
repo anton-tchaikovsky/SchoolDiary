@@ -7,7 +7,7 @@ import com.gb.schooldiary.databinding.ClassCardViewBinding
 import com.gb.schooldiary.domain.Class
 import com.gb.schooldiary.presentation.home.ProviderImageId.getClassImageId
 
-class ClassViewHolder(private val binding: ClassCardViewBinding) : ViewHolder(binding.root) {
+class HomeClassViewHolder(private val binding: ClassCardViewBinding) : ViewHolder(binding.root) {
     fun bind(itemClass: Class) {
         binding.run {
             classTextView.text = itemClass.name

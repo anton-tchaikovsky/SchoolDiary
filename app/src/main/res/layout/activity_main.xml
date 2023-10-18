@@ -176,7 +176,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/vertical_guide_line_25"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/baseline_format_list_bulleted_24" />
+                        app:srcCompat="@drawable/baseline_edit_note_24" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -198,7 +198,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/vertical_guide_line_75"
                 app:layout_constraintStart_toStartOf="@+id/vertical_guide_line_50"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/baseline_format_list_bulleted_24" />
+                app:srcCompat="@drawable/baseline_edit_note_24" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/marks_card_view"
