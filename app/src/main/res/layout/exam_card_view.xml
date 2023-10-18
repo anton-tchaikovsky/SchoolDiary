@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    xmlns:tool="http://schemas.android.com/tools"
+    app:layout_constraintTop_toBottomOf="@id/avatar_image_view"
+    app:layout_constraintBottom_toTopOf="@id/classes_text_view"
+    android:layout_marginStart="@dimen/margin_large"
+    android:layout_marginEnd="@dimen/margin_large"
+    android:layout_marginTop="@dimen/margin_large"
+    android:layout_marginBottom="@dimen/margin_large"
+    tool:layout_height="144dp">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/exam_text_view"
+            style="@style/InfoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exam"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/day_ten_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/day_one_card_view"
+            app:layout_constraintTop_toBottomOf="@id/exam_text_view"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            >
+            <TextView
+                android:id="@+id/day_ten_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/day_one_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/day_ten_card_view"
+            app:layout_constraintEnd_toStartOf="@id/hours_ten_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            android:layout_marginStart="@dimen/margin_small"
+            >
+            <TextView
+                android:id="@+id/day_one_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/hours_ten_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/day_one_card_view"
+            app:layout_constraintEnd_toStartOf="@id/hours_one_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            android:layout_marginStart="@dimen/margin_large"
+            >
+            <TextView
+                android:id="@+id/hours_ten_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/hours_one_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/hours_ten_card_view"
+            app:layout_constraintEnd_toStartOf="@id/minutes_ten_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            android:layout_marginStart="@dimen/margin_small"
+            >
+            <TextView
+                android:id="@+id/hours_one_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/minutes_ten_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/hours_one_card_view"
+            app:layout_constraintEnd_toStartOf="@id/minutes_one_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            android:layout_marginStart="@dimen/margin_large"
+            >
+            <TextView
+                android:id="@+id/minutes_ten_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/minutes_one_card_view"
+            style="@style/ExamTimeCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/minutes_ten_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_large"
+            >
+            <TextView
+                android:id="@+id/minutes_one_text_view"
+                style="@style/InfoTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:layout_margin="@dimen/margin_medium"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/InfoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/day_one_card_view"
+            app:layout_constraintEnd_toStartOf="@id/hours_ten_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            app:layout_constraintBottom_toBottomOf="@id/day_ten_card_view"
+            android:text="@string/colon"
+            />
+
+        <TextView
+            style="@style/InfoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/hours_one_card_view"
+            app:layout_constraintEnd_toStartOf="@id/minutes_ten_card_view"
+            app:layout_constraintTop_toTopOf="@id/day_ten_card_view"
+            app:layout_constraintBottom_toBottomOf="@id/day_ten_card_view"
+            android:text="@string/colon"
+            />
+
+        <TextView
+            style="@style/TimeTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/day_ten_card_view"
+            app:layout_constraintEnd_toEndOf="@id/day_one_card_view"
+            app:layout_constraintTop_toBottomOf="@id/day_ten_card_view"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/days"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            style="@style/TimeTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/hours_ten_card_view"
+            app:layout_constraintEnd_toEndOf="@id/hours_one_card_view"
+            app:layout_constraintTop_toBottomOf="@id/day_ten_card_view"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/hours"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            style="@style/TimeTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/hours_ten_card_view"
+            app:layout_constraintEnd_toEndOf="@id/hours_one_card_view"
+            app:layout_constraintTop_toBottomOf="@id/day_ten_card_view"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/hours"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            style="@style/TimeTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/minutes_ten_card_view"
+            app:layout_constraintEnd_toEndOf="@id/minutes_one_card_view"
+            app:layout_constraintTop_toBottomOf="@id/day_ten_card_view"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/minutes"
+            android:textColor="@color/white"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>
